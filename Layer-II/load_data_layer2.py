@@ -196,3 +196,6 @@ def load_testing_data():
     np.save('y_test_layer2.npy', Y_test)
 
     return X_test, Y_test
+
+X_train,y_train = load_training_data()
+X_test,y_test = load_testing_data()  
