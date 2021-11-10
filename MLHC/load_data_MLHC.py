@@ -1,10 +1,35 @@
-import cv2, os
+import cv2, os, imutils
 import numpy as np
 from imblearn.over_sampling import SMOTE
 from Preprocess import preparation
 from sklearn import preprocessing
 
 test_data_dir = '../Dataset_holdout/test'
+
+def preparation(image):
+    try:
+        # Grayscale conversion
+        img = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+        ############################################# Image Enhancement ##############################################################
+        # Power-law Tranformation
+        img = np.array(255*(img/255)**0.5,dtype='uint8')
+        # 2-dimesional Gaussian filter
+        img = cv2.GaussianBlur(img,(3,3),0)
+
+        ############################################# Feature Extraction ##############################################################
+        # Histogram Analysis
+        hist = cv2.calcHist([img], [0], None, [256], [0, 256])
+        # L2-normalization
+        if imutils.is_cv2():
+            hist = cv2.normalize(hist)
+        else:
+            cv2.normalize(hist, hist)
+
+        return hist.flatten()
+    except Exception as x:
+        print(str(x))
+
 
 def load_test_data():
     labels = os.listdir(test_data_dir)
