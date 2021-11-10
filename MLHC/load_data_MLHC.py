@@ -108,3 +108,5 @@ def load_test_data():
     np.save('y_test_MLHC.npy', Y_test)
 
     return X_test, Y_test
+
+X_test,y_test = load_testing_data()  
