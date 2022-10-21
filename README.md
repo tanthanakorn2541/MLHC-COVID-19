@@ -6,3 +6,5 @@ Mendeley dataset: https://data.mendeley.com/datasets/2fxz4px6d8/4 <br /><br />
 Github: https://github.com/ieee8023/covid-chestxray-dataset <br /><br />
 Italian Society of Medical and Interventional Radiology (SIRM): https://sirm.org/category/covid-19/ <br /><br />
 Radiopaedia: https://radiopaedia.org/search?lang=us&modality=X-ray&page=1&q=COVID-19+pneumonia&scope=cases&system=Chest <br /><br />
+
+This repository is part of the "MLHC-COVID-19: Multi-layer Hybrid Classification Model for the Detection of COVID-19 from CXR Images" research: https://preprints.jmir.org/preprint/42324
